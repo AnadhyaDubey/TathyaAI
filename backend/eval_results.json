@@ -1,0 +1,402 @@
+[
+  {
+    "case_id": "8b5885a8-de5e-4071-8cb1-2c99bc259a6e",
+    "expected": "legitimate",
+    "predicted": "legitimate",
+    "confidence": 0.85,
+    "requires_human": false,
+    "amount": 14040.21
+  },
+  {
+    "case_id": "c0dc04ba-c869-43e3-9803-c3e8da16e96d",
+    "expected": "legitimate",
+    "predicted": "insufficient_evidence",
+    "confidence": 0.6,
+    "requires_human": true,
+    "amount": 3027.86
+  },
+  {
+    "case_id": "99505b3c-43c5-4603-9b6e-dee17ce5905a",
+    "expected": "legitimate",
+    "predicted": "insufficient_evidence",
+    "confidence": 0.5,
+    "requires_human": true,
+    "amount": 14867.21
+  },
+  {
+    "case_id": "47c7edb4-46bb-4ae4-bfba-92302f1d3b86",
+    "expected": "legitimate",
+    "predicted": "legitimate",
+    "confidence": 0.85,
+    "requires_human": true,
+    "amount": 15712.77
+  },
+  {
+    "case_id": "dc60577e-194f-469a-895a-671caf383689",
+    "expected": "legitimate",
+    "predicted": "insufficient_evidence",
+    "confidence": 0.5,
+    "requires_human": true,
+    "amount": 17589.36
+  },
+  {
+    "case_id": "b5c58027-e7c7-45c8-8ee8-86c80284d585",
+    "expected": "legitimate",
+    "predicted": "insufficient_evidence",
+    "confidence": 0.6,
+    "requires_human": true,
+    "amount": 12218.01
+  },
+  {
+    "case_id": "c5188846-81a0-451f-bdcd-cbc96fbcf893",
+    "expected": "legitimate",
+    "predicted": "legitimate",
+    "confidence": 0.85,
+    "requires_human": false,
+    "amount": 11030.45
+  },
+  {
+    "case_id": "e191c9ce-76bc-4754-b246-0156417e9903",
+    "expected": "legitimate",
+    "predicted": "legitimate",
+    "confidence": 0.85,
+    "requires_human": false,
+    "amount": 5499.79
+  },
+  {
+    "case_id": "97084d67-3108-4dcf-9923-85059a6d4f10",
+    "expected": "legitimate",
+    "predicted": "legitimate",
+    "confidence": 0.82,
+    "requires_human": true,
+    "amount": 11154.9
+  },
+  {
+    "case_id": "511a068f-1088-4e64-a91c-54670a5e047d",
+    "expected": "legitimate",
+    "predicted": "legitimate",
+    "confidence": 0.85,
+    "requires_human": false,
+    "amount": 12611.71
+  },
+  {
+    "case_id": "85342591-f75c-4adb-898d-aba28af272b2",
+    "expected": "legitimate",
+    "predicted": "legitimate",
+    "confidence": 0.8,
+    "requires_human": true,
+    "amount": 24601.61
+  },
+  {
+    "case_id": "29761b00-ae61-48cd-8428-24f674337120",
+    "expected": "legitimate",
+    "predicted": "legitimate",
+    "confidence": 0.8,
+    "requires_human": true,
+    "amount": 3283.97
+  },
+  {
+    "case_id": "2e2a4a1b-bfab-4493-921a-7ddfdddec082",
+    "expected": "fraud",
+    "predicted": "insufficient_evidence",
+    "confidence": 0.55,
+    "requires_human": true,
+    "amount": 20202.76
+  },
+  {
+    "case_id": "85552e44-4be6-48de-bad1-7beee04c6635",
+    "expected": "legitimate",
+    "predicted": "legitimate",
+    "confidence": 0.8,
+    "requires_human": true,
+    "amount": 2435.31
+  },
+  {
+    "case_id": "e6a6c0a1-6484-4181-9dba-fc6177dd70f1",
+    "expected": "legitimate",
+    "predicted": "legitimate",
+    "confidence": 0.82,
+    "requires_human": true,
+    "amount": 6415.54
+  },
+  {
+    "case_id": "a9e71404-799c-485b-9768-471ba8ddc76c",
+    "expected": "fraud",
+    "predicted": "legitimate",
+    "confidence": 0.75,
+    "requires_human": true,
+    "amount": 16221.42
+  },
+  {
+    "case_id": "b2c98988-cba9-4527-b88d-43275a72a251",
+    "expected": "fraud",
+    "predicted": "legitimate",
+    "confidence": 0.8,
+    "requires_human": true,
+    "amount": 23090.03
+  },
+  {
+    "case_id": "a485a58f-a47d-4c64-8847-3a5c5baf27a3",
+    "expected": "legitimate",
+    "predicted": "legitimate",
+    "confidence": 0.85,
+    "requires_human": false,
+    "amount": 11343.12
+  },
+  {
+    "case_id": "1119b260-c60b-42b5-9d83-5fc662a5975d",
+    "expected": "legitimate",
+    "predicted": "legitimate",
+    "confidence": 0.9,
+    "requires_human": true,
+    "amount": 17092.11
+  },
+  {
+    "case_id": "9d639903-5c01-4958-b700-2e5b9e4b1255",
+    "expected": "fraud",
+    "predicted": "fraud",
+    "confidence": 0.72,
+    "requires_human": true,
+    "amount": 13556.8
+  },
+  {
+    "case_id": "d8cbf398-1b0f-47b0-9a5e-5f4f8254221e",
+    "expected": "legitimate",
+    "predicted": "legitimate",
+    "confidence": 0.85,
+    "requires_human": true,
+    "amount": 21518.25
+  },
+  {
+    "case_id": "e24ca558-5dca-4389-909d-0c625b9f95ed",
+    "expected": "legitimate",
+    "predicted": "legitimate",
+    "confidence": 0.85,
+    "requires_human": true,
+    "amount": 15315.4
+  },
+  {
+    "case_id": "19340446-bb88-4b9e-b518-bb2a3f6b092d",
+    "expected": "legitimate",
+    "predicted": "legitimate",
+    "confidence": 0.8,
+    "requires_human": true,
+    "amount": 16636.66
+  },
+  {
+    "case_id": "53dbf64f-e509-4fbb-ae0d-2789068482d2",
+    "expected": "legitimate",
+    "predicted": "insufficient_evidence",
+    "confidence": 0.55,
+    "requires_human": true,
+    "amount": 9722.67
+  },
+  {
+    "case_id": "4b1990c3-b61b-4d9e-b667-583700a0be52",
+    "expected": "legitimate",
+    "predicted": "fraud",
+    "confidence": 0.85,
+    "requires_human": true,
+    "amount": 9649.43
+  },
+  {
+    "case_id": "f481d9b1-836d-465e-8fcb-3e56319c4414",
+    "expected": "legitimate",
+    "predicted": "legitimate",
+    "confidence": 0.85,
+    "requires_human": true,
+    "amount": 18024.19
+  },
+  {
+    "case_id": "0186a55c-1f70-4b2d-aab6-49a9646b9625",
+    "expected": "legitimate",
+    "predicted": "legitimate",
+    "confidence": 0.85,
+    "requires_human": true,
+    "amount": 20243.34
+  },
+  {
+    "case_id": "2623b25d-69e1-4bd4-9378-25d5fd29cd65",
+    "expected": "legitimate",
+    "predicted": "legitimate",
+    "confidence": 0.82,
+    "requires_human": true,
+    "amount": 568.54
+  },
+  {
+    "case_id": "51ac72f2-c702-41ae-85b5-f6dd1f20eea5",
+    "expected": "legitimate",
+    "predicted": "insufficient_evidence",
+    "confidence": 0.55,
+    "requires_human": true,
+    "amount": 13267.97
+  },
+  {
+    "case_id": "787a9b49-b5ba-43b4-a307-b34a3120c7e0",
+    "expected": "legitimate",
+    "predicted": "legitimate",
+    "confidence": 0.85,
+    "requires_human": false,
+    "amount": 10910.54
+  },
+  {
+    "case_id": "eda4d1c9-77cf-41c4-900c-69974ee1c40a",
+    "expected": "legitimate",
+    "predicted": "legitimate",
+    "confidence": 0.75,
+    "requires_human": true,
+    "amount": 23644.04
+  },
+  {
+    "case_id": "c9a0d43b-2042-46fe-83f6-6632aaa4a980",
+    "expected": "legitimate",
+    "predicted": "legitimate",
+    "confidence": 0.85,
+    "requires_human": true,
+    "amount": 17861.39
+  },
+  {
+    "case_id": "eef9253c-f5a1-4323-a5e4-0ff1d50b88df",
+    "expected": "legitimate",
+    "predicted": "legitimate",
+    "confidence": 0.82,
+    "requires_human": true,
+    "amount": 3666.47
+  },
+  {
+    "case_id": "8769667f-5f6c-4717-a51f-1f2ae42ce3ac",
+    "expected": "legitimate",
+    "predicted": "legitimate",
+    "confidence": 0.85,
+    "requires_human": false,
+    "amount": 10331.24
+  },
+  {
+    "case_id": "b366ca74-2311-437d-9ff4-7f523e9a3532",
+    "expected": "legitimate",
+    "predicted": "legitimate",
+    "confidence": 0.85,
+    "requires_human": true,
+    "amount": 22964.83
+  },
+  {
+    "case_id": "6f318b92-0b67-44b9-a4ba-e1801a3ed225",
+    "expected": "legitimate",
+    "predicted": "insufficient_evidence",
+    "confidence": 0.55,
+    "requires_human": true,
+    "amount": 4961.73
+  },
+  {
+    "case_id": "f71c240a-f014-4b79-b568-3ed872364a3f",
+    "expected": "legitimate",
+    "predicted": "legitimate",
+    "confidence": 0.75,
+    "requires_human": true,
+    "amount": 21799.14
+  },
+  {
+    "case_id": "e57c6452-a122-48bf-881a-0b206d863866",
+    "expected": "legitimate",
+    "predicted": "insufficient_evidence",
+    "confidence": 0.5,
+    "requires_human": true,
+    "amount": 9843.66
+  },
+  {
+    "case_id": "fada00f4-46cc-4f50-ab40-0b50f96fb09c",
+    "expected": "legitimate",
+    "predicted": "legitimate",
+    "confidence": 0.85,
+    "requires_human": false,
+    "amount": 8654.22
+  },
+  {
+    "case_id": "53e46d9b-25da-4c16-a38f-42b4b00e3df2",
+    "expected": "legitimate",
+    "predicted": "legitimate",
+    "confidence": 0.82,
+    "requires_human": true,
+    "amount": 13547.87
+  },
+  {
+    "case_id": "2619206b-efe5-4f77-a019-bb79781696c4",
+    "expected": "legitimate",
+    "predicted": "legitimate",
+    "confidence": 0.75,
+    "requires_human": true,
+    "amount": 10715.57
+  },
+  {
+    "case_id": "2c448bed-e698-400a-aa88-b3420b11be40",
+    "expected": "fraud",
+    "predicted": "fraud",
+    "confidence": 0.85,
+    "requires_human": true,
+    "amount": 15601.48
+  },
+  {
+    "case_id": "d5170735-8cb3-4b4d-a785-2f74351db07b",
+    "expected": "fraud",
+    "predicted": "legitimate",
+    "confidence": 0.82,
+    "requires_human": true,
+    "amount": 23671.05
+  },
+  {
+    "case_id": "c62c2c60-cc74-43d4-995b-5b3afe945363",
+    "expected": "legitimate",
+    "predicted": "legitimate",
+    "confidence": 0.82,
+    "requires_human": true,
+    "amount": 22868.41
+  },
+  {
+    "case_id": "a50b12c2-5e58-4d3e-a7b5-9fce7ebca02b",
+    "expected": "legitimate",
+    "predicted": "fraud",
+    "confidence": 0.85,
+    "requires_human": true,
+    "amount": 3036.86
+  },
+  {
+    "case_id": "7d96b611-8893-46b2-a3c4-fd65795e845a",
+    "expected": "legitimate",
+    "predicted": "insufficient_evidence",
+    "confidence": 0.6,
+    "requires_human": true,
+    "amount": 9271.22
+  },
+  {
+    "case_id": "9d0e8ce9-4563-4c9b-a22f-0ac7ca031431",
+    "expected": "fraud",
+    "predicted": "insufficient_evidence",
+    "confidence": 0.6,
+    "requires_human": true,
+    "amount": 24058.32
+  },
+  {
+    "case_id": "a4cde5d9-0295-4954-854b-f13a8eb87d4a",
+    "expected": "legitimate",
+    "predicted": "legitimate",
+    "confidence": 0.85,
+    "requires_human": true,
+    "amount": 18680.27
+  },
+  {
+    "case_id": "37c1234d-2a55-4374-8948-25cf3e8399b0",
+    "expected": "legitimate",
+    "predicted": "legitimate",
+    "confidence": 0.85,
+    "requires_human": false,
+    "amount": 14056.34
+  },
+  {
+    "case_id": "866708c7-8494-4ebc-b6b8-14237c4db947",
+    "expected": "legitimate",
+    "predicted": "legitimate",
+    "confidence": 0.8,
+    "requires_human": true,
+    "amount": 14986.35
+  }
+]
