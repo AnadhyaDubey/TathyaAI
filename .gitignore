@@ -1,0 +1,36 @@
+# Environment variables — NEVER commit these
+.env
+backend/.env
+*.env
+!.env.example
+
+# Python
+venv/
+backend/venv/
+__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Database
+*.db
+*.sqlite3
+
+# Node / frontend (future)
+node_modules/
+frontend/dist/
+frontend/build/
+frontend/.next/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+this is the gitignore code
