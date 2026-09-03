@@ -1,11 +1,14 @@
+import warnings
+warnings.filterwarnings("ignore")
+
 import os
 from typing import TypedDict, Optional
 from langgraph.graph import StateGraph, END
 from langchain_google_genai import ChatGoogleGenerativeAI
+from tenacity import retry, wait_exponential, stop_after_attempt
 from dotenv import load_dotenv
 
 from schemas import CaseInput, HypothesisOutput, JudgeVerdict
-from tenacity import retry, wait_exponential, stop_after_attempt
 
 load_dotenv()
 
@@ -53,10 +56,13 @@ def fraud_agent_node(state: AgentState) -> AgentState:
 
 {context}
 
-Build the fraud case. Cite specific signals from the data above (account age, device linkage, chargeback history, amount, etc). Do not invent facts not present in the context. If the evidence for fraud is genuinely weak, say so honestly in your argument and lower your confidence accordingly — do not manufacture a strong case from weak signals."""
+Build the fraud case. Cite specific signals from the data above (account age, device linkage, chargeback history, amount, etc). Do not invent facts not present in the context. If the evidence for fraud is genuinely weak, say so honestly in your argument and lower your confidence accordingly — do not manufacture a strong case from weak signals.
+
+IMPORTANT: cited_signals must be copied verbatim from the field names shown above (e.g. "account_age_days", "total_chargebacks", "accounts_linked") — never invent new signal names not present in the data given to you."""
 
     structured_llm = llm.with_structured_output(HypothesisOutput)
     hypothesis = structured_llm.invoke(prompt)
+    hypothesis.stance = "fraud"
     return {"fraud_hypothesis": hypothesis}
 
 
@@ -67,10 +73,13 @@ def defense_agent_node(state: AgentState) -> AgentState:
 
 {context}
 
-Build the legitimacy case. Cite specific signals from the data above. Do not invent facts not present in the context. If the evidence for legitimacy is genuinely weak, say so honestly and lower your confidence accordingly."""
+Build the legitimacy case. Cite specific signals from the data above. Do not invent facts not present in the context. If the evidence for legitimacy is genuinely weak, say so honestly and lower your confidence accordingly.
+
+IMPORTANT: cited_signals must be copied verbatim from the field names shown above (e.g. "account_age_days", "total_chargebacks", "accounts_linked") — never invent new signal names not present in the data given to you."""
 
     structured_llm = llm.with_structured_output(HypothesisOutput)
     hypothesis = structured_llm.invoke(prompt)
+    hypothesis.stance = "legitimate"
     return {"defense_hypothesis": hypothesis}
 
 

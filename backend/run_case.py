@@ -1,3 +1,5 @@
+import warnings
+warnings.filterwarnings("ignore")
 import asyncio
 import os
 from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession
@@ -88,6 +90,24 @@ async def run_one_case():
     print(f"Final verdict: {decision.final_verdict}")
     print(f"Requires human: {decision.requires_human}")
     print(f"Override reason: {decision.override_reason}")
+    
+    from evidence_guard import find_unverifiable_signals
+
+    all_cited = (
+        final_state["fraud_hypothesis"].cited_signals
+        + final_state["defense_hypothesis"].cited_signals
+    )
+    bad_signals = find_unverifiable_signals(all_cited)
+
+    print("\n--- EVIDENCE VERIFICATION ---")
+    if bad_signals:
+        print(f"⚠ Unverifiable signals detected: {bad_signals}")
+        print("→ Forcing human review regardless of policy engine decision.")
+    else:
+        print("✓ All cited signals correspond to real case data.")
+
+    final_requires_human = decision.requires_human or bool(bad_signals)
+    print(f"\nFINAL requires_human (policy + evidence check): {final_requires_human}")
 
 
 if __name__ == "__main__":
