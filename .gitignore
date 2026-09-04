@@ -17,11 +17,13 @@ __pycache__/
 *.db
 *.sqlite3
 
-# Node / frontend (future)
+# Node / frontend
 node_modules/
+**/node_modules/
 frontend/dist/
 frontend/build/
-frontend/.next/
+frontend/.vite/
+.vite/
 
 # IDE
 .vscode/
@@ -33,4 +35,3 @@ Thumbs.db
 
 # Logs
 *.log
-this is the gitignore code

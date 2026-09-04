@@ -1,6 +1,5 @@
-from sqlalchemy import Column, String, Float, Integer, Boolean, DateTime, Text, ForeignKey, Enum
+from sqlalchemy import Column, String, Float, Integer, Boolean, DateTime, Text, ForeignKey, Enum, JSON, Uuid
 from sqlalchemy.orm import declarative_base, relationship
-from sqlalchemy.dialects.postgresql import UUID, JSONB
 from datetime import datetime
 import uuid
 import enum
@@ -21,7 +20,7 @@ class Verdict(str, enum.Enum):
 
 class Case(Base):
     __tablename__ = "cases"
-    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    id = Column(Uuid(as_uuid=True), primary_key=True, default=uuid.uuid4)
     status = Column(Enum(CaseStatus), default=CaseStatus.OPEN)
     chargeback_amount = Column(Float, nullable=False)
     chargeback_reason = Column(String(255))
@@ -31,7 +30,7 @@ class Case(Base):
     requires_human = Column(Boolean, default=False)
     created_at = Column(DateTime, default=datetime.utcnow)
     resolved_at = Column(DateTime, nullable=True)
-    evidence_package = Column(JSONB, nullable=True)
+    evidence_package = Column(JSON, nullable=True)
     audit_trail = relationship("AuditLog", back_populates="case")
 
 class Transaction(Base):
@@ -45,7 +44,7 @@ class Transaction(Base):
     status = Column(String(50))
     payment_method = Column(String(50))
     created_at = Column(DateTime, default=datetime.utcnow)
-    metadata_ = Column(JSONB, nullable=True)
+    metadata_ = Column(JSON, nullable=True)
 
 class Customer(Base):
     __tablename__ = "customers"
@@ -78,18 +77,18 @@ class Merchant(Base):
 
 class AuditLog(Base):
     __tablename__ = "audit_logs"
-    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
-    case_id = Column(UUID(as_uuid=True), ForeignKey("cases.id"))
+    id = Column(Uuid(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    case_id = Column(Uuid(as_uuid=True), ForeignKey("cases.id"))
     agent = Column(String(100))
     action = Column(String(255))
-    payload = Column(JSONB)
+    payload = Column(JSON)
     timestamp = Column(DateTime, default=datetime.utcnow)
     case = relationship("Case", back_populates="audit_trail")
 
 class Evidence(Base):
     __tablename__ = "evidence"
-    id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
-    case_id = Column(UUID(as_uuid=True), ForeignKey("cases.id"))
+    id = Column(Uuid(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    case_id = Column(Uuid(as_uuid=True), ForeignKey("cases.id"))
     evidence_type = Column(String(100))
     content = Column(Text)
     source = Column(String(100))

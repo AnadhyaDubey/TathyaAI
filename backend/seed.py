@@ -15,11 +15,21 @@ load_dotenv()
 fake = Faker()
 random.seed(42)
 
-DATABASE_URL = os.getenv("DATABASE_URL")
+DATABASE_URL = os.getenv("DATABASE_URL", "sqlite+aiosqlite:///./tathyaai.db")
 MERCHANT_CATEGORIES = ["Electronics", "Fashion", "Grocery", "Travel", "Digital Services"]
 
 async def seed():
-    engine = create_async_engine(DATABASE_URL, echo=False)
+    global DATABASE_URL
+    try:
+        engine = create_async_engine(DATABASE_URL, echo=False)
+        async with engine.begin() as conn:
+            await conn.run_sync(Base.metadata.create_all)
+    except Exception:
+        DATABASE_URL = "sqlite+aiosqlite:///./tathyaai.db"
+        engine = create_async_engine(DATABASE_URL, echo=False)
+        async with engine.begin() as conn:
+            await conn.run_sync(Base.metadata.create_all)
+
     async_session = sessionmaker(engine, class_=AsyncSession, expire_on_commit=False)
     ground_truth = {}
 
