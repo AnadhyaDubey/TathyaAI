@@ -1,5 +1,5 @@
 from datetime import datetime
-from uuid import uuid4
+from uuid import UUID, uuid4
 from typing import Optional
 
 from fastapi import APIRouter, Depends, HTTPException
@@ -126,7 +126,7 @@ async def investigate_adhoc_case(payload: AdhocCaseRequest, db: AsyncSession = D
 # ── DYNAMIC ROUTES — must come after all static routes above ──
 
 @router.post("/{case_id}/investigate")
-async def investigate_real_case(case_id: str, db: AsyncSession = Depends(get_db)):
+async def investigate_real_case(case_id: UUID, db: AsyncSession = Depends(get_db)):
     """Runs the full pipeline against a real seeded case already in the database."""
     try:
         case_input, case_row = await load_case_input_from_db(db, case_id)
@@ -139,7 +139,7 @@ async def investigate_real_case(case_id: str, db: AsyncSession = Depends(get_db)
 
 
 @router.get("/{case_id}")
-async def get_case(case_id: str, db: AsyncSession = Depends(get_db)):
+async def get_case(case_id: UUID, db: AsyncSession = Depends(get_db)):
     case_row = (await db.execute(select(Case).where(Case.id == case_id))).scalar_one_or_none()
     if case_row is None:
         raise HTTPException(status_code=404, detail="Case not found")
@@ -158,7 +158,7 @@ async def get_case(case_id: str, db: AsyncSession = Depends(get_db)):
 
 
 @router.post("/{case_id}/approve")
-async def approve_case(case_id: str, payload: ApproveRequest, db: AsyncSession = Depends(get_db)):
+async def approve_case(case_id: UUID, payload: ApproveRequest, db: AsyncSession = Depends(get_db)):
     case_row = (await db.execute(select(Case).where(Case.id == case_id))).scalar_one_or_none()
     if case_row is None:
         raise HTTPException(status_code=404, detail="Case not found")
