@@ -1,6 +1,6 @@
 # TathyaAI
 
-**Adversarial multi-agent chargeback defense — built for Razorpay AI Buildathon 2026, Track 02: AI Risk Manager**
+**Adversarial multi-agent chargeback defense**
 
 *Tathya* is Sanskrit for "fact" or "truth." When a chargeback dispute arrives, most systems give you a single AI-generated fraud score. TathyaAI instead runs an adversarial trial: one agent argues fraud, another argues legitimate, a judge weighs both — and a deterministic policy engine, running zero AI, has the final word.
 
